@@ -21,6 +21,10 @@ const appRoutes: Routes = [
     {path:'login', component:LoginComponent}
 ]
 
+export const firebaseConfig = {
+    
+}
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -38,9 +42,14 @@ const appRoutes: Routes = [
     ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes),
+        AngularFireModule.initializeApp(firebaseConfig)
     ],
-    providers: [],
+    providers: [
+        AngularFireAuth,
+        AngularFireDatabase,
+        ClientService    
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
