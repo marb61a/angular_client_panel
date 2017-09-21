@@ -20,5 +20,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  onSubmit(){
+    this.authService.login(this.email, this.password)
+      .then((res) => {
+        this._flashMessagesService.show('You are logged in', { cssClass: 'alert-success', timeout: 4000 });
+        this.router.navigate(['/']);
+      })
+      .catch((err) => {
+        this._flashMessagesService.show(err.message, { cssClass: 'alert-danger', timeout: 4000 });
+        this.router.navigate(['/login']);
+      })
+  }
 
 }
