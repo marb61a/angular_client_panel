@@ -10,10 +10,10 @@ import { Client } from '../../models/Client';
   styleUrls: ['./client-details.component.css']
 })
 export class ClientDetailsComponent implements OnInit {
-  id: string;
-  client: Client;
-  hasBalance: boolean = false;
-  showBalanceUpdateInput: boolean = false;
+  id:string;
+  client:Client;
+  hasBalance:boolean = false;
+  showBalanceUpdateInput:boolean = false;
   
   constructor(
     public clientService:ClientService,
@@ -40,7 +40,7 @@ export class ClientDetailsComponent implements OnInit {
   updateBalance(id:string){
     // Update the client
     this.clientService.updateClient(this.id, this.client);
-    this.flashMessagesService.show('Balance Updated', { cssClass: 'alert-success', timeout: 4000 );
+    this.flashMessagesService.show('Balance Updated', { cssClass: 'alert-success', timeout: 4000 });
     this.router.navigate(['/client/' + this.id]);;
   }
   
