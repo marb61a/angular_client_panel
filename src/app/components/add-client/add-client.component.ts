@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
-import { Client } from '../../models/client';
+import { Client } from '../../models/Client';
 
 @Component({
   selector: 'app-add-client',
@@ -11,13 +11,13 @@ import { Client } from '../../models/client';
 })
 export class AddClientComponent implements OnInit {
   client:Client = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    balance: 0
+    firstName:'',
+    lastName:'',
+    email:'',
+    phone:'',
+    balance:0
   }
-  disableBalanceOnAdd:boolean: false;
+  disableBalanceOnAdd:boolean = false;
     
   constructor(
     public flashMessagesService:FlashMessagesService, 

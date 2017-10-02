@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map';
 import { SettingsService } from '../../services/settings.service';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar/component.html',
-    styleUrls: ['./navbar/component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements onInit{
+export class NavbarComponent implements OnInit{
     isLoggedIn:boolean;
     loggedInUser:string;
     showRegister:boolean;

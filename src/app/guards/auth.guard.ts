@@ -11,14 +11,14 @@ export class AuthGuard implements CanActivate{
         public afAuth:AngularFireAuth
     ){}
     
-    canActivate: Observable<boolean>{
-        return this.afAuth.authState.map(
+    canActivate(): Observable<boolean>{
+        return this.afAuth.authState.map(auth => {
             if(!auth){
                 this.router.navigate(['/login']);
                 return false;
             } else {
                 return true;
             }
-        )
+        });
     }
 }

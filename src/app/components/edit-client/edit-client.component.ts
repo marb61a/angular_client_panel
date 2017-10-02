@@ -11,8 +11,8 @@ import { SettingsService } from '../../services/settings.service';
   styleUrls: ['./edit-client.component.css']
 })
 export class EditClientComponent implements OnInit {
-  id:string:
-  client:Client{
+  id:string;
+  client:Client = {
     firstName:'',
     lastName: '',
     email:'',
